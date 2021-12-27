@@ -12,6 +12,7 @@ import java.util.Locale;
 
 import javax.annotation.Nullable;
 
+import eu.endercentral.crazy_advancements.messages.JSONMessage;
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.command.Command;

@@ -2,11 +2,12 @@ package eu.endercentral.crazy_advancements.advancement;
 
 import javax.annotation.Nullable;
 
+import eu.endercentral.crazy_advancements.messages.MessageProvider;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 
-import eu.endercentral.crazy_advancements.JSONMessage;
+import eu.endercentral.crazy_advancements.messages.JSONMessage;
 import net.md_5.bungee.api.chat.TextComponent;
 import net.minecraft.advancements.AdvancementFrameType;
 
@@ -19,7 +20,7 @@ import net.minecraft.advancements.AdvancementFrameType;
 public class AdvancementDisplay {
 	
 	private ItemStack icon;
-	private JSONMessage title, description;
+	private MessageProvider title, description;
 	private AdvancementFrame frame;
 	private transient AdvancementVisibility vis;
 	private String backgroundTexture;
@@ -36,7 +37,7 @@ public class AdvancementDisplay {
 	 * @param frame {@link AdvancementFrame}
 	 * @param visibility When an advancement is visible
 	 */
-	public AdvancementDisplay(Material icon, JSONMessage title, JSONMessage description, AdvancementFrame frame, AdvancementVisibility visibility) {
+	public AdvancementDisplay(Material icon, MessageProvider title, MessageProvider description, AdvancementFrame frame, AdvancementVisibility visibility) {
 		this.icon = new ItemStack(icon);
 		this.title = title;
 		this.description = description;
@@ -70,7 +71,7 @@ public class AdvancementDisplay {
 	 * @param backgroundTexture Background texture path
 	 * @param visibility When an advancement is visible
 	 */
-	public AdvancementDisplay(Material icon, JSONMessage title, JSONMessage description, AdvancementFrame frame, String backgroundTexture, AdvancementVisibility visibility) {
+	public AdvancementDisplay(Material icon, MessageProvider title, MessageProvider description, AdvancementFrame frame, String backgroundTexture, AdvancementVisibility visibility) {
 		this.icon = new ItemStack(icon);
 		this.title = title;
 		this.description = description;
@@ -108,7 +109,7 @@ public class AdvancementDisplay {
 	 * @param frame {@link AdvancementFrame}
 	 * @param visibility When an advancement is visible
 	 */
-	public AdvancementDisplay(ItemStack icon, JSONMessage title, JSONMessage description, AdvancementFrame frame, AdvancementVisibility visibility) {
+	public AdvancementDisplay(ItemStack icon, MessageProvider title, MessageProvider description, AdvancementFrame frame, AdvancementVisibility visibility) {
 		this.icon = icon;
 		this.title = title;
 		this.description = description;
@@ -236,7 +237,7 @@ public class AdvancementDisplay {
 	 * 
 	 * @return Title {@link JSONMessage}
 	 */
-	public JSONMessage getTitle() {
+	public MessageProvider getTitle() {
 		return title;
 	}
 	
@@ -244,7 +245,7 @@ public class AdvancementDisplay {
 	 * 
 	 * @return Description {@link JSONMessage}
 	 */
-	public JSONMessage getDescription() {
+	public MessageProvider getDescription() {
 		return description;
 	}
 	

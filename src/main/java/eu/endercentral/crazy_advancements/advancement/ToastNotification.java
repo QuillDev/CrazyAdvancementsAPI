@@ -2,11 +2,12 @@ package eu.endercentral.crazy_advancements.advancement;
 
 import java.util.Arrays;
 
+import eu.endercentral.crazy_advancements.messages.MessageProvider;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 
-import eu.endercentral.crazy_advancements.JSONMessage;
+import eu.endercentral.crazy_advancements.messages.JSONMessage;
 import eu.endercentral.crazy_advancements.NameKey;
 import eu.endercentral.crazy_advancements.advancement.AdvancementDisplay.AdvancementFrame;
 import eu.endercentral.crazy_advancements.packet.ToastAdvancementsPacket;
@@ -21,7 +22,7 @@ import net.md_5.bungee.api.chat.TextComponent;
 public class ToastNotification {
 	
 	private final ItemStack icon;
-	private final JSONMessage message;
+	private final MessageProvider message;
 	private final AdvancementFrame frame;
 	private final Advancement toastAdvancement;
 	
@@ -32,7 +33,7 @@ public class ToastNotification {
 	 * @param message The displayed Message
 	 * @param frame Determines the displayed Title and Sound Effect (evaluated client-side and modifiable via resource packs)
 	 */
-	public ToastNotification(ItemStack icon, JSONMessage message, AdvancementFrame frame) {
+	public ToastNotification(ItemStack icon, MessageProvider message, AdvancementFrame frame) {
 		this.icon = icon;
 		this.message = message;
 		this.frame = frame;
@@ -103,7 +104,7 @@ public class ToastNotification {
 	 * 
 	 * @return The Title
 	 */
-	public JSONMessage getMessage() {
+	public MessageProvider getMessage() {
 		return message;
 	}
 	
